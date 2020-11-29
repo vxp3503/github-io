@@ -1,26 +1,9 @@
-const navSlide = () => {
-    const burger = document.querySelector(".burger");
-    const nav = document.querySelector(".nav-links");
-    const navLinks = document.querySelectorAll('.nav-links li');
+const navLinks = document.querySelector('.nav-links');
+const burger = document.querySelector('.hamburger-menu');
+const navbar = document.querySelector('.navbar');
 
-    // toggle nav
-    burger.addEventListener('click',() => {
-        nav.classList.toggle('nav-active');
-
-        // animate links
-        navLinks.forEach((link, index) => {
-            if(link.style.animation){
-                link.style.animation = '';
-            }else{
-            link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 * 2}s`;
-            }
-        });
-
-        // burger animation 
-        burger.classList.toggle('toggle');
-    });
-
-  
-}
-
-navSlide();
+// Event listeners
+burger.addEventListener('click', () => {
+    navLinks.classList.toggle('nav-active');
+    burger.classList.toggle('bar-change');
+})
